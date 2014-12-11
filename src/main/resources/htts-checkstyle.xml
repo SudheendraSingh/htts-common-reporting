@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+	<property name="severity" value="warning" />
+	<property name="localeCountry" value="NL" />
+	<property name="localeLanguage" value="nl" />
+
+	<module name="RegexpHeader">
+		<property name="header" value="^\/\*$\n^[ ]+\*[ ]+Copyright.[ :]*" />
+	</module>
+
+	<module name="FileTabCharacter">
+		<property name="eachLine" value="true" />
+	</module>
+	<module name="TreeWalker">
+		<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+			value="Default tab with is 4 spaces." />
+		<property name="tabWidth" value="4" />
+		<module name="JavadocMethod">
+			<property name="severity" value="error" />
+			<property name="scope" value="package" />
+			<property name="excludeScope" value="anoninner" />
+			<property name="allowMissingParamTags" value="true" />
+			<property name="allowMissingReturnTag" value="true" />
+			<property name="allowMissingPropertyJavadoc" value="true" />
+		</module>
+		<module name="JavadocStyle">
+			<property name="severity" value="warning" />
+			<property name="checkEmptyJavadoc" value="true" />
+			<property name="checkFirstSentence" value="false" />
+		</module>
+		<module name="JavadocType">
+			<property name="severity" value="error" />
+		</module>
+		<module name="JavadocVariable">
+			<property name="excludeScope" value="anoninner" />
+			<property name="scope" value="package" />
+		</module>
+		<module name="ConstantName">
+			<property name="severity" value="error" />
+			<property name="format" value="^[A-Z][_A-Z]*[0-9]*$" />
+		</module>
+		<module name="LocalFinalVariableName" />
+		<module name="LocalVariableName">
+			<property name="severity" value="error" />
+		</module>
+		<module name="MemberName">
+			<property name="severity" value="error" />
+		</module>
+		<module name="MethodName" />
+		<module name="PackageName" />
+		<module name="ParameterName" />
+		<module name="StaticVariableName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Static variable names should be final and adhere to the coding rules" />
+			<property name="severity" value="error" />
+		</module>
+		<module name="TypeName" />
+		<module name="AvoidStarImport" />
+		<module name="IllegalImport" />
+		<module name="RedundantImport" />
+		<module name="UnusedImports" />
+		<module name="AnonInnerLength">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Inner classes can be somewhat larger than 20, since it is common practice in seam. And needed for Test" />
+			<property name="severity" value="error" />
+			<property name="max" value="120" />
+		</module>
+		<module name="ExecutableStatementCount" />
+		<module name="LineLength">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Maximum line length is 160, using tabwidth of 4." />
+			<property name="severity" value="error" />
+			<property name="max" value="160" />
+			<property name="tabWidth" value="4" />
+		</module>
+		<module name="ParameterNumber" />
+		<module name="EmptyForIteratorPad" />
+		<module name="MethodParamPad" />
+		<module name="NoWhitespaceAfter" />
+		<module name="WhitespaceAfter">
+			<property name="tokens" value="COMMA, TYPECAST" />
+		</module>
+		<module name="NoWhitespaceBefore" />
+		<module name="OperatorWrap" />
+		<module name="ParenPad">
+			<property name="tokens" value="CTOR_CALL,METHOD_CALL,SUPER_CTOR_CALL" />
+		</module>
+		<module name="TypecastParenPad" />
+
+		<module name="WhitespaceAround">
+			<property name="tokens"
+				value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND,WILDCARD_TYPE" />
+		</module>
+		<module name="ModifierOrder">
+			<property name="severity" value="error" />
+		</module>
+		<module name="RedundantModifier">
+			<property name="severity" value="warning" />
+			<property name="tokens" value="VARIABLE_DEF,ANNOTATION_FIELD_DEF" />
+		</module>
+		<module name="AvoidNestedBlocks" />
+		<module name="EmptyBlock">
+			<property name="severity" value="error" />
+		</module>
+		<module name="LeftCurly" />
+		<module name="NeedBraces">
+			<property name="severity" value="error" />
+		</module>
+		<module name="RightCurly" />
+		<module name="CovariantEquals" />
+		<module name="DefaultComesLast" />
+		<module name="DoubleCheckedLocking" />
+		<module name="EmptyStatement">
+			<property name="severity" value="error" />
+		</module>
+		<module name="EqualsHashCode" />
+		<module name="ExplicitInitialization">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="No need to intialize members with there defaults." />
+			<property name="severity" value="error" />
+		</module>
+		<module name="FallThrough" />
+		<module name="HiddenField">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Field names and parameter names can be the same, we do not see the harm in that." />
+			<property name="severity" value="ignore" />
+			<property name="ignoreConstructorParameter" value="true" />
+			<property name="ignoreSetter" value="true" />
+		</module>
+		<module name="IllegalInstantiation">
+			<property name="severity" value="error" />
+		</module>
+		<module name="IllegalCatch">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Do not catch Exception" />
+		</module>
+		<module name="IllegalThrows" />
+		<module name="InnerAssignment" />
+		<module name="JUnitTestCase" />
+		<module name="MagicNumber">
+			<property name="severity" value="info" />
+		</module>
+		<module name="MissingSwitchDefault" />
+		<module name="MultipleVariableDeclarations" />
+		<module name="NestedIfDepth">
+			<property name="max" value="3" />
+		</module>
+		<module name="NestedTryDepth" />
+		<module name="PackageDeclaration" />
+		<module name="ParameterAssignment" />
+		<module name="RedundantThrows">
+			<property name="logLoadErrors" value="true" />
+			<property name="suppressLoadErrors" value="true" />
+		</module>
+		<module name="SimplifyBooleanExpression" />
+		<module name="SimplifyBooleanReturn" />
+		<module name="StringLiteralEquality" />
+		<module name="FinalClass" />
+		<module name="HideUtilityClassConstructor" />
+		<module name="InterfaceIsType" />
+		<module name="VisibilityModifier">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Decent design should explicitely state the modifier visibility. Protected members are allowed." />
+			<property name="severity" value="error" />
+			<property name="protectedAllowed" value="true" />
+		</module>
+		<module name="BooleanExpressionComplexity">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Generated code often uses more than the default of 3 expressions. When it is more than 8, there really is an overly complex expression." />
+			<property name="severity" value="error" />
+			<property name="max" value="8" />
+		</module>
+		<module name="ClassDataAbstractionCoupling">
+			<property name="severity" value="warning" />
+			<property name="max" value="10" />
+		</module>
+		<module name="ClassFanOutComplexity">
+			<property name="severity" value="warning" />
+			<property name="max" value="40" />
+		</module>
+		<module name="CyclomaticComplexity">
+			<property name="max" value="15" />
+		</module>
+		<module name="JavaNCSS" />
+		<module name="NPathComplexity" />
+		<module name="ArrayTypeStyle" />
+		<module name="Indentation">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Indentation is incorrect, please do a clean code in eclipse!" />
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Indentation is incorrect, please do a clean code in eclipse!" />
+			<property name="severity" value="error" />
+		</module>
+		<module name="TodoComment" />
+		<module name="UpperEll">
+			<property name="severity" value="error" />
+		</module>
+		<module name="Regexp">
+			<property name="severity" value="error" />
+			<property name="format" value="System\.out\.println" />
+			<property name="message"
+				value="Never use System.out.println, always use logging mechanism [LOGGER.error(message, ex)]" />
+			<property name="illegalPattern" value="true" />
+		</module>
+		<module name="Regexp">
+			<property name="severity" value="error" />
+			<property name="format" value="ex\.printStacktrace" />
+			<property name="message"
+				value="Never use printStacktrace, always use logging mechanism [LOGGER.error(message, ex)]!" />
+			<property name="illegalPattern" value="true" />
+		</module>
+	</module>
+	<module name="Translation">
+		<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+			value="bundle files should contain the same keys at least!" />
+		<property name="severity" value="error" />
+	</module>
+</module>
